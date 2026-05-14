@@ -1,0 +1,319 @@
+/* ==========================================
+   1. VARIÁVEIS, RESET E CONFIGURAÇÕES DO BODY
+   ========================================== */
+:root { 
+    --cor-primaria: #634b61; 
+    --cor-fundo: #f5f5f5; 
+    --cor-botao: #d9d9d9; 
+    --texto-cor: #555;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+}
+
+body { 
+    background: var(--cor-fundo); 
+    padding: 20px; 
+}
+
+/* Imagem de fundo global para o agrupamento */
+.img-fundo {
+    background-image: url('../img/img 12.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0; 
+    min-height: auto; 
+}
+
+
+/* ==========================================
+   2. PADRONIZAÇÃO DE TAMANHO (MÁXIMO 1000PX)
+   ========================================== */
+.container-secao,
+.secao-acomodacoes {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto !important; /* Força o alinhamento horizontal centralizado */
+    padding-left: 20px;  
+    padding-right: 20px; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Ajuste dos containers Bootstrap internos para respeitarem os 1000px */
+.container-secao .container,
+.secao-acomodacoes .container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.secao-titulo {
+    color: #6b4a6b;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+
+/* ==========================================
+   3. SEÇÃO 4 - NOIVAS (TOTALMENTE INTEGRADA)
+   ========================================== */
+.card-noivas { 
+    background: transparent; /* Transparência total aplicada */
+    display: flex; 
+    align-items: center; 
+    max-width: 1000px; 
+    width: 100%;
+    margin: 0 auto; 
+    overflow: hidden; 
+    /* Sombra removida completamente */
+}
+
+.bloco-imagem { 
+    flex: 0 0 45%; 
+    display: flex; 
+    align-items: center;
+}
+
+.bloco-imagem img { 
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 0 50px 50px 0; 
+    transform: scale(1.05); 
+}
+
+.bloco-texto { 
+    flex: 1; 
+    padding: 40px 60px; 
+    color: var(--texto-cor); 
+}
+
+.bloco-texto h1 { 
+    color: var(--cor-primaria); 
+    font-size: 2.1rem; 
+    margin-bottom: 20px; 
+    line-height: 1.1; 
+}
+
+.bloco-texto p { 
+    font-size: 1.05rem; 
+    line-height: 1.5; 
+    margin-bottom: 8px; 
+}
+
+.bloco-texto strong { 
+    color: var(--cor-primaria); 
+}
+
+.info-validade { 
+    display: block;
+    color: #999; 
+    font-size: 0.9rem; 
+    margin-bottom: 35px; 
+}
+
+.acoes { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.btn-link { 
+    background: var(--cor-botao); 
+    color: var(--cor-primaria); 
+    text-decoration: none; 
+    padding: 14px 20px; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    transition: all 0.3s ease; 
+}
+
+.btn-link:hover { 
+    filter: brightness(0.95); 
+    transform: translateX(5px); 
+}
+
+
+/* ==========================================
+   4. CARDS DE ACOMODAÇÃO / PACOTES (BOOTSTRAP)
+   ========================================== */
+.card {
+    border: none;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-title {
+    color: #6b4a6b;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* ==========================================
+   5. COMPONENTES DE BOTÕES & MODAIS
+   ========================================== */
+.btn-primary {
+    background-color: #6b4a6b;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover, 
+.btn-primary:focus {
+    background-color: #533953;
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 24px;
+}
+
+.btn-success {
+    background-color: #6b4a6b;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 24px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.btn-success:hover {
+    background-color: #533953;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px;
+}
+
+.modal-header, 
+.modal-footer {
+    border: none;
+}
+
+.modal-title-custom {
+    color: #6b4a6b;
+    font-size: 1.5rem;
+}
+
+.class-list .list-group-item {
+    color: #495057;
+    padding: 12px 0;
+    border-color: rgba(107, 74, 107, 0.1);
+}
+
+
+/* ==========================================
+   6. CONFIGURAÇÕES DO CARROSSEL DE ACOMODAÇÕES
+   ========================================== */
+.carousel {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.carousel-img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-caption {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 15px 25px;
+    bottom: 5%;
+    color: #495057;
+    text-align: left;
+    max-width: 80%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-caption h5 {
+    color: #6b4a6b;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 35px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #6b4a6b;
+    width: 50px;
+}
+
+
+/* ==========================================
+   7. REGRAS DE RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 850px) {
+    .card-noivas { 
+        flex-direction: column; 
+        border-radius: 30px; 
+    }
+    .bloco-imagem { 
+        flex: none; 
+        width: 100%; 
+    }
+    .bloco-imagem img { 
+        border-radius: 30px; 
+        transform: none; 
+    }
+    .bloco-texto { 
+        padding: 30px; 
+        text-align: center; 
+    }
+    .btn-link { 
+        justify-content: center; 
+    }
+}
